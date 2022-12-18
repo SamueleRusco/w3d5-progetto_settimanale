@@ -424,6 +424,7 @@ console.log("----------------------------");
 */
 function onlyInLastMillennium(array) {
   let arrayFilmVecchi = [];
+  let arrayFilmNuovi = [];
   for (let i = 0; i < array.length; i++) {
     const element = array[i];
     if (parseInt(array[i].Year) < 2000) {
@@ -432,8 +433,9 @@ function onlyInLastMillennium(array) {
   }
   return arrayFilmVecchi;
 }
+console.log("Esercizio 15");
 console.log(onlyInLastMillennium(movies));
-
+console.log("----------------------------");
 function onlyInLastMillennium2(array) {
   let arrayFilmVecchi = [];
   array.forEach((element) => {
@@ -539,18 +541,39 @@ function tagPrint(tagName) {
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
-
+function backgroundColor(tag) {
+  document.getElementsByTagName(tag).style.backgroundColor = "red";
+}
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+function addNewElement(event) {
+  if (event.key === "Enter") {
+    const valoreInputField = document.getElementById("inputText").value;
+    {
+      const newElement = document.createElement("li");
+      newElement.innerText = valoreInputField;
+      document.getElementById("myList").append(newElement);
+    }
+  }
+}
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+function rimuoviTestoBottone() {
+  const myList = document.getElementById("myList"); //seleziono locazione (padre)
+  const elementiSelezionati = document.getElementsByTagName("li"); //seleziono gli item "clickati" dentro al padre
+  elementiSelezionati.forEach((element) => myList.removeChild(element)); //per ogni elemento ".selected" nella lista "list-item" ordino la rimozione
+}
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+function addClass(tr) {
+  const trTag = document.getElementsByTagName("tr");
+  trTag.foreach((element) => trTag.classList("test"));
+}
 
 // [EXTRA] JS Avanzato
 
